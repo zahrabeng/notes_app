@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema({
     name: String,
     email: String,
-    password: String
+    password: String,
 });
 
-export const usersModel = mongoose.model('user', userSchema)
+export const usersModel = mongoose.model('user', userSchema);

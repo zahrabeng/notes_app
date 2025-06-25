@@ -1,5 +1,11 @@
 import express from 'express';
-import { addNote, updateNote, deleteNote, getAllNotes, getUserNotes } from './notes.controller.js';
+import {
+    addNote,
+    updateNote,
+    deleteNote,
+    getAllNotes,
+    getUserNotes,
+} from './notes.controller.js';
 // import { auth } from '../../middleware/auth.js'; removed auth for now until we add login page so we can pass the token in api req
 
 export const notesRouter = express.Router();

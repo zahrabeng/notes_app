@@ -1,4 +1,4 @@
-import { usersModel } from "../../../models/user.mode.js"
+import { usersModel } from '../../../models/user.mode.js';
 import bycript from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -7,12 +7,12 @@ const signUp = async (req, res) => {
 
     const user = await usersModel.findOne({ email });
     if (user) {
-        res.json({ message: "user already exists" })
+        res.json({ message: 'user already exists' });
     } else {
         const hash = bycript.hashSync(password, 2);
         await usersModel.insertMany({ name, email, password: hash });
     }
-    res.json({ message: "success" })
+    res.json({ message: 'success' });
 };
 
 const signIn = async (req, res) => {
@@ -20,12 +20,14 @@ const signIn = async (req, res) => {
 
     const user = await usersModel.findOne({ email });
     if (user && bycript.compareSync(password, user.password)) {
-        let token = jwt.sign({ id: user.id, name: user.name }, process.env.SECRET_KEY);
-        res.json({ message: 'success', token })
-    }
-    else {
-        res.json({ message: "user not found or password incorrect" })
+        let token = jwt.sign(
+            { id: user.id, name: user.name },
+            process.env.SECRET_KEY
+        );
+        res.json({ message: 'success', token });
+    } else {
+        res.json({ message: 'user not found or password incorrect' });
     }
 };
 
-export { signIn, signUp }
+export { signIn, signUp };

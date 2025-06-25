@@ -9,8 +9,6 @@ const LandingPage = () => {
     const [note, setNote] = useState('');
     const [allNotes, setAllNotes] = useState([]);
 
-    console.log(allNotes, 'allNotes')
-
     const handleSubmitNote = () => {
         setNoteTitle('');
         setNote('');
