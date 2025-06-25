@@ -3,7 +3,7 @@
 ## What did I learn here ?
 
 - jsonwebtokens => how to verify and create tokens
-- bcrypt => how to verity and hash them
+- bcrypt => how to verify and hash passwords
 - mongoose => how to connect to mongodb using mongoose and query the data in the correct way
 
 
